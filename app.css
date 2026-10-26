@@ -219,3 +219,141 @@ h1, h2, p { margin-top: 0; }
   .contact-whatsapp-mark { margin-right: auto; border-radius: 99px; padding: 5px 9px; color: #08764b; background: #e9f7ef; font-size: 8px; font-weight: 800; }
   .print-disclaimer { margin-top: 7mm; color: #777d81; font-size: 7px; line-height: 1.6; }
 }
+
+/* Distinct, high-contrast inspection states */
+.status-option[data-value="excellent"] { --status-color: #15803d; --status-tint: #effaf2; --status-line: #72bf88; }
+.status-option[data-value="good"] { --status-color: #1d4ed8; --status-tint: #eff5ff; --status-line: #83a7f7; }
+.status-option[data-value="followup"] { --status-color: #b45309; --status-tint: #fff7ed; --status-line: #f0ad63; }
+.status-option[data-value="replace"] { --status-color: #7e22ce; --status-tint: #faf3ff; --status-line: #be8be8; }
+.status-option[data-value="damaged"] { --status-color: #b91c1c; --status-tint: #fff1f1; --status-line: #e58b8b; }
+.status-option[data-value="uninspectable"] { --status-color: #475569; --status-tint: #f1f5f9; --status-line: #94a3b8; }
+.status-option span { border-color: var(--status-line); color: var(--status-color); }
+.status-option[data-value="excellent"] input:checked + span,
+.status-option[data-value="good"] input:checked + span,
+.status-option[data-value="followup"] input:checked + span,
+.status-option[data-value="replace"] input:checked + span,
+.status-option[data-value="damaged"] input:checked + span,
+.status-option[data-value="uninspectable"] input:checked + span { background: var(--status-color); border-color: var(--status-color); color: #fff; font-weight: 850; box-shadow: 0 2px 8px #17191c22; }
+
+@page { size: A4; margin: 11mm; }
+@media print {
+  .print-page { min-height: 275mm; }
+  .print-header {
+    display: grid;
+    grid-template-columns: 70mm minmax(0, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 5mm;
+    width: 100%;
+    min-height: 31mm;
+    margin: 0 0 7mm;
+    padding: 3mm 4mm;
+    direction: ltr;
+    background: #24292e;
+    color: #fff;
+    border-top: 1.5mm solid var(--orange);
+    border-bottom: 1mm solid var(--orange);
+    border-radius: 3mm;
+  }
+  .print-header-compact { min-height: 30mm; }
+  .print-brand {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    width: 70mm;
+    min-width: 0;
+    gap: 2.5mm;
+    direction: rtl;
+    text-align: right;
+    white-space: normal;
+    font-size: 9px;
+    font-weight: 750;
+    line-height: 1.45;
+  }
+  .print-brand img {
+    width: 34mm;
+    height: 15mm;
+    flex: 0 0 auto;
+    padding: 1.4mm;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid #e8eaec;
+    border-radius: 2mm;
+    image-rendering: high-quality;
+  }
+  .print-brand-line { height: 12mm; width: 1px; flex: 0 0 auto; background: #ffffff70; }
+  .print-title-block {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    min-width: 0;
+    direction: rtl;
+    text-align: right;
+  }
+  .print-title-block p { margin: 0 0 3px; font-size: 10px; letter-spacing: .04em; opacity: .9; }
+  .print-title-block h1 { max-width: 100%; margin: 0 0 4px; font-size: 22px; line-height: 1.2; overflow-wrap: break-word; }
+  .print-title-block small { font-size: 10px; opacity: .95; }
+  .print-separator { padding: 0 5px; opacity: .75; }
+  .print-meta { margin-bottom: 7mm; border-color: #d9dee3; border-radius: 3mm; }
+  .print-meta-head {
+    padding: 8px 11px;
+    background: #fff1e9;
+    color: #a63c00;
+    border-right: 3px solid var(--orange);
+    font-size: 11px;
+  }
+  .print-meta-grid > div { min-height: 13mm; padding: 5px 8px; gap: 3px; }
+  .print-meta-grid small { color: #59636d; font-size: 10px; }
+  .print-meta-grid b { color: #20252a; font-size: 12px; line-height: 1.45; }
+  .print-section-head {
+    padding: 7px 10px;
+    margin-bottom: 5px;
+    background: #f0f2f4;
+    color: #252a30;
+    border-right: 3px solid var(--orange);
+    border-radius: 1.5mm;
+    font-size: 12px;
+  }
+  .print-section-head small { color: #535d67; font-size: 10px; }
+  .print-checks th { padding: 7px 6px; background: #292f35; color: #fff; font-size: 10.5px; }
+  .print-checks td { padding: 6px 7px; font-size: 12px; line-height: 1.38; }
+  .print-num { width: 9mm; }
+  .print-state { width: 31mm; }
+  .print-note { width: 48mm; }
+  .print-state-cell {
+    text-align: center;
+    font-size: 10.5px !important;
+    font-weight: 850;
+    border-radius: 1.5mm;
+    border: 1px solid currentColor !important;
+    padding: 4px 3px !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .print-state-cell[data-state="excellent"] { color: #166534 !important; background: #e8f5ec !important; border-color: #15803d !important; }
+  .print-state-cell[data-state="good"] { color: #1e40af !important; background: #eaf1ff !important; border-color: #1d4ed8 !important; }
+  .print-state-cell[data-state="followup"] { color: #9a4306 !important; background: #fff2df !important; border-color: #b45309 !important; }
+  .print-state-cell[data-state="replace"] { color: #6b21a8 !important; background: #f5eaff !important; border-color: #7e22ce !important; }
+  .print-state-cell[data-state="damaged"] { color: #991b1b !important; background: #fff0f0 !important; border-color: #b91c1c !important; }
+  .print-state-cell[data-state="uninspectable"], .print-state-cell[data-state=""] { color: #334155 !important; background: #edf1f5 !important; border-color: #64748b !important; }
+  .print-page-one .print-checks tbody tr { height: 12mm; }
+  .print-page-two .print-checks tbody tr { height: 10.6mm; }
+  .print-empty { color: #64748b; }
+  .print-footer { padding-top: 6px; color: #4b5563; font-size: 9px; border-top-color: #d5d9dd; }
+  .print-summary-block { padding: 11px; border-color: #d9dee3; border-radius: 3mm; }
+  .print-overall { min-height: 16mm; padding: 6px 7px; font-size: 13px; line-height: 1.65; }
+  .print-final-notes { min-height: 42mm; padding: 7px; font-size: 12px; line-height: 1.7; }
+  .print-signatures { gap: 12px; margin: 8mm 0 7mm; }
+  .print-signature { min-height: 42mm; border-color: #cfd5da; border-radius: 2mm; }
+  .print-signature strong { font-size: 11px; }
+  .print-signature img { height: 27mm; }
+  .print-signature small { font-size: 10px; }
+  .print-contact { gap: 14px; margin-top: 6mm; padding: 9px 13px; background: #f1f8f3; border-color: #b9d9c2; }
+  .whatsapp-qr { width: 37mm; height: 37mm; border: 1px solid #a8cbb2; border-radius: 2mm; }
+  .print-contact strong { font-size: 13px; color: #1f2933; }
+  .print-contact p { font-size: 11px; color: #52615a; }
+  .print-contact b { font-size: 12px; }
+  .contact-whatsapp-mark { padding: 6px 11px; color: #fff; background: #16833f; font-size: 9px; }
+  .print-disclaimer { margin-top: 5mm; color: #4b5563; font-size: 9px; line-height: 1.55; }
+}

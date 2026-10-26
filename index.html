@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,12 +10,11 @@
   <link rel="stylesheet" href="./app.css">
   <script src="./app.js" defer></script>
 </head>
-
 <body>
   <div class="app-shell" id="app-shell">
     <header class="topbar">
       <a class="brand" href="https://fazza.sa/" target="_blank" rel="noreferrer" aria-label="فزاع لصيانة السيارات">
-        <img src="fazza-logo.png" class="brand-logo" alt="شعار فزاع لصيانة السيارات">
+        <img src="/fazza-logo.png" class="brand-logo" alt="شعار فزاع لصيانة السيارات">
         <span class="brand-divider"></span>
         <span class="brand-copy"><strong>فزاع</strong><small>صيانة السيارات المتنقلة</small></span>
       </a>
@@ -51,8 +49,7 @@
 
       <section class="progress-card" aria-label="تقدم الفحص">
         <div class="progress-copy">
-          <div class="progress-label"><span>تقدم توثيق نقاط الفحص</span><strong id="progress-count"><bdi dir="ltr">0 /
-                29</bdi> مكتملة</strong></div>
+          <div class="progress-label"><span>تقدم توثيق نقاط الفحص</span><strong id="progress-count"><bdi dir="ltr">0 / 29</bdi> مكتملة</strong></div>
           <div class="progress-track"><span id="progress-bar"></span></div>
         </div>
         <div class="status-summary" id="status-summary" aria-live="polite"></div>
@@ -62,48 +59,27 @@
         <section class="form-section details-section" aria-labelledby="details-title">
           <div class="section-heading">
             <div class="section-mark">01</div>
-            <div>
-              <p class="section-kicker">بيانات التقرير</p>
-              <h2 id="details-title">العميل والمركبة</h2>
-            </div>
+            <div><p class="section-kicker">بيانات التقرير</p><h2 id="details-title">العميل والمركبة</h2></div>
           </div>
           <div class="field-grid">
-            <label class="field"><span>اسم العميل</span><input id="customerName" name="customerName" type="text"
-                placeholder="اكتب اسم العميل" autocomplete="name"></label>
-            <label class="field"><span>رقم الجوال</span><input id="customerPhone" name="customerPhone" type="tel"
-                placeholder="05xxxxxxxx" inputmode="tel" autocomplete="tel" dir="auto"></label>
-            <label class="field"><span>نوع السيارة</span><input id="carType" name="carType" type="text"
-                placeholder="مثال: تويوتا كامري"></label>
-            <label class="field"><span>سنة الموديل</span><input id="modelYear" name="modelYear" type="number"
-                placeholder="2022" min="1950" max="2099" inputmode="numeric"></label>
-            <label class="field"><span>رقم اللوحة</span><input id="plate" name="plate" type="text"
-                placeholder="رقم اللوحة" dir="auto"></label>
-            <label class="field"><span>رقم الهيكل (VIN)</span><input id="vin" name="vin" type="text"
-                placeholder="رقم الهيكل" dir="auto"></label>
-            <label class="field"><span>قراءة العداد</span>
-              <div class="input-suffix"><input id="odometer" name="odometer" type="text" placeholder="مثال: 85,000"
-                  inputmode="numeric" dir="auto"><span>كم</span></div>
-            </label>
-            <label class="field"><span>رقم التقرير</span><input id="reportNo" name="reportNo" type="text"
-                placeholder="يُضاف رقم التقرير" dir="auto"></label>
-            <label class="field"><span>تاريخ الفحص</span><input id="inspectionDate" name="inspectionDate"
-                type="date"></label>
-            <label class="field"><span>اسم الفني</span><input id="technician" name="technician" type="text"
-                placeholder="اسم فني الفحص"></label>
+            <label class="field"><span>اسم العميل</span><input id="customerName" name="customerName" type="text" placeholder="اكتب اسم العميل" autocomplete="name"></label>
+            <label class="field"><span>رقم الجوال</span><input id="customerPhone" name="customerPhone" type="tel" placeholder="05xxxxxxxx" inputmode="tel" autocomplete="tel" dir="auto"></label>
+            <label class="field"><span>نوع السيارة</span><input id="carType" name="carType" type="text" placeholder="مثال: تويوتا كامري"></label>
+            <label class="field"><span>سنة الموديل</span><input id="modelYear" name="modelYear" type="number" placeholder="2022" min="1950" max="2099" inputmode="numeric"></label>
+            <label class="field"><span>رقم اللوحة</span><input id="plate" name="plate" type="text" placeholder="رقم اللوحة" dir="auto"></label>
+            <label class="field"><span>رقم الهيكل (VIN)</span><input id="vin" name="vin" type="text" placeholder="رقم الهيكل" dir="auto"></label>
+            <label class="field"><span>قراءة العداد</span><div class="input-suffix"><input id="odometer" name="odometer" type="text" placeholder="مثال: 85,000" inputmode="numeric" dir="auto"><span>كم</span></div></label>
+            <label class="field"><span>رقم التقرير</span><input id="reportNo" name="reportNo" type="text" placeholder="يُضاف رقم التقرير" dir="auto"></label>
+            <label class="field"><span>تاريخ الفحص</span><input id="inspectionDate" name="inspectionDate" type="date"></label>
+            <label class="field"><span>اسم الفني</span><input id="technician" name="technician" type="text" placeholder="اسم فني الفحص"></label>
           </div>
         </section>
 
         <section class="form-section checklist-section" aria-labelledby="checks-title">
           <div class="section-heading section-heading-wide">
             <div class="section-mark">02</div>
-            <div>
-              <p class="section-kicker">29 نقطة رئيسية</p>
-              <h2 id="checks-title">قائمة الفحص</h2>
-              <p class="section-subtitle">اختر حالة واحدة لكل نقطة، وأضف وصفاً عند الحاجة.</p>
-            </div>
-            <div class="legend"><span class="legend-dot legend-excellent"></span> ممتاز <span
-                class="legend-dot legend-followup"></span> يحتاج متابعة <span class="legend-dot legend-replace"></span>
-              يحتاج تغيير</div>
+            <div><p class="section-kicker">29 نقطة رئيسية</p><h2 id="checks-title">قائمة الفحص</h2><p class="section-subtitle">اختر حالة واحدة لكل نقطة، وأضف وصفاً عند الحاجة.</p></div>
+            <div class="legend"><span class="legend-dot legend-excellent"></span> ممتاز <span class="legend-dot legend-followup"></span> يحتاج متابعة <span class="legend-dot legend-replace"></span> يحتاج تغيير</div>
           </div>
           <div id="inspection-groups" class="inspection-groups"></div>
         </section>
@@ -111,41 +87,27 @@
         <section class="form-section summary-section" aria-labelledby="summary-title">
           <div class="section-heading">
             <div class="section-mark">03</div>
-            <div>
-              <p class="section-kicker">رأي الفني</p>
-              <h2 id="summary-title">الملخص النهائي</h2>
-            </div>
+            <div><p class="section-kicker">رأي الفني</p><h2 id="summary-title">الملخص النهائي</h2></div>
           </div>
           <div class="field-grid summary-fields">
-            <label class="field field-wide"><span>الحالة العامة للسيارة</span><input id="overallStatus"
-                name="overallStatus" type="text" placeholder="مثال: جيدة وتحتاج إلى متابعة بعض الملاحظات"></label>
-            <label class="field field-wide"><span>أهم الملاحظات والتوصيات</span><textarea id="finalNotes"
-                name="finalNotes" rows="5" placeholder="اكتب أهم الملاحظات والتوصيات للعميل"></textarea></label>
+            <label class="field field-wide"><span>الحالة العامة للسيارة</span><input id="overallStatus" name="overallStatus" type="text" placeholder="مثال: جيدة وتحتاج إلى متابعة بعض الملاحظات"></label>
+            <label class="field field-wide"><span>أهم الملاحظات والتوصيات</span><textarea id="finalNotes" name="finalNotes" rows="5" placeholder="اكتب أهم الملاحظات والتوصيات للعميل"></textarea></label>
           </div>
         </section>
 
         <section class="form-section signatures-section" aria-labelledby="signatures-title">
           <div class="section-heading">
             <div class="section-mark">04</div>
-            <div>
-              <p class="section-kicker">اعتماد التقرير</p>
-              <h2 id="signatures-title">التوقيعات</h2>
-            </div>
+            <div><p class="section-kicker">اعتماد التقرير</p><h2 id="signatures-title">التوقيعات</h2></div>
           </div>
           <div class="signature-grid">
             <div class="signature-card">
-              <div class="signature-card-head">
-                <div><strong>توقيع الفني</strong><small>وقّع داخل المساحة</small></div><button
-                  class="text-button clear-signature" data-pad="tech-signature" type="button">مسح</button>
-              </div>
+              <div class="signature-card-head"><div><strong>توقيع الفني</strong><small>وقّع داخل المساحة</small></div><button class="text-button clear-signature" data-pad="tech-signature" type="button">مسح</button></div>
               <canvas class="signature-pad" id="tech-signature" aria-label="مساحة توقيع الفني"></canvas>
               <label class="signature-name-label" for="technician">اسم الفني يظهر من بيانات التقرير</label>
             </div>
             <div class="signature-card">
-              <div class="signature-card-head">
-                <div><strong>توقيع العميل</strong><small>تأكيد استلام التقرير</small></div><button
-                  class="text-button clear-signature" data-pad="customer-signature" type="button">مسح</button>
-              </div>
+              <div class="signature-card-head"><div><strong>توقيع العميل</strong><small>تأكيد استلام التقرير</small></div><button class="text-button clear-signature" data-pad="customer-signature" type="button">مسح</button></div>
               <canvas class="signature-pad" id="customer-signature" aria-label="مساحة توقيع العميل"></canvas>
               <span class="signature-name-label">اسم العميل يظهر من بيانات التقرير</span>
             </div>
@@ -154,8 +116,7 @@
       </form>
 
       <footer class="screen-footer">
-        <div><span class="footer-brand-dot"></span><span>فزاع لصيانة السيارات</span><span
-            class="footer-sep">·</span><span>لا تروح للورشة.. الورشة تجيك</span></div>
+        <div><span class="footer-brand-dot"></span><span>فزاع لصيانة السيارات</span><span class="footer-sep">·</span><span>لا تروح للورشة.. الورشة تجيك</span></div>
         <a href="https://wa.me/966575003013" target="_blank" rel="noreferrer">تواصل مع خدمة العملاء</a>
       </footer>
     </main>
@@ -164,13 +125,8 @@
   <section class="print-report" id="print-report" aria-label="نسخة التقرير للطباعة">
     <article class="print-page print-page-one">
       <header class="print-header">
-        <div class="print-brand"><img src="./fazza-logo.png" alt="فزاع"><span
-            class="print-brand-line"></span><span>صيانة السيارات المتنقلة</span></div>
-        <div class="print-title-block">
-          <p>تقرير فحص المركبة</p>
-          <h1>تقرير فحص السيارة</h1><small>رقم التقرير: <b data-print="reportNo">—</b> <span
-              class="print-separator">|</span> تاريخ الفحص: <b data-print="inspectionDate">—</b></small>
-        </div>
+        <div class="print-brand"><img src="./fazza-logo.png" alt="فزاع"><span class="print-brand-line"></span><span>صيانة السيارات المتنقلة</span></div>
+        <div class="print-title-block"><p>تقرير فحص المركبة</p><h1>تقرير فحص السيارة</h1><small>رقم التقرير: <b data-print="reportNo">—</b> <span class="print-separator">|</span> تاريخ الفحص: <b data-print="inspectionDate">—</b></small></div>
       </header>
       <section class="print-meta">
         <div class="print-meta-head">بيانات العميل والمركبة</div>
@@ -187,56 +143,25 @@
       </section>
       <section class="print-checks">
         <div class="print-section-head"><span>الكهرباء</span><small>نقاط الفحص 1–11</small></div>
-        <table>
-          <thead>
-            <tr>
-              <th class="print-num">م</th>
-              <th>نقطة الفحص</th>
-              <th class="print-state">الحالة</th>
-              <th class="print-note">ملاحظة</th>
-            </tr>
-          </thead>
-          <tbody id="print-electricity"></tbody>
-        </table>
+        <table><thead><tr><th class="print-num">م</th><th>نقطة الفحص</th><th class="print-state">الحالة</th><th class="print-note">ملاحظة</th></tr></thead><tbody id="print-electricity"></tbody></table>
       </section>
-      <footer class="print-footer"><span>تقرير فحص السيارة — فزاع</span><span>0575003013</span><span>صفحة 1 من 3</span>
-      </footer>
+      <footer class="print-footer"><span>تقرير فحص السيارة — فزاع</span><span>0575003013</span><span>صفحة 1 من 3</span></footer>
     </article>
     <article class="print-page print-page-two">
       <header class="print-header print-header-compact">
-        <div class="print-brand"><img src="./fazza-logo.png" alt="فزاع"><span
-            class="print-brand-line"></span><span>صيانة السيارات المتنقلة</span></div>
-        <div class="print-title-block">
-          <p>تقرير فحص المركبة</p>
-          <h1>نقاط الفحص الميكانيكية</h1><small>رقم التقرير: <b data-print="reportNo">—</b></small>
-        </div>
+        <div class="print-brand"><img src="./fazza-logo.png" alt="فزاع"><span class="print-brand-line"></span><span>صيانة السيارات المتنقلة</span></div>
+        <div class="print-title-block"><p>تقرير فحص المركبة</p><h1>نقاط الفحص الميكانيكية</h1><small>رقم التقرير: <b data-print="reportNo">—</b></small></div>
       </header>
       <section class="print-checks">
         <div class="print-section-head"><span>الميكانيكا</span><small>نقاط الفحص 12–29</small></div>
-        <table>
-          <thead>
-            <tr>
-              <th class="print-num">م</th>
-              <th>نقطة الفحص</th>
-              <th class="print-state">الحالة</th>
-              <th class="print-note">ملاحظة</th>
-            </tr>
-          </thead>
-          <tbody id="print-mechanical"></tbody>
-        </table>
+        <table><thead><tr><th class="print-num">م</th><th>نقطة الفحص</th><th class="print-state">الحالة</th><th class="print-note">ملاحظة</th></tr></thead><tbody id="print-mechanical"></tbody></table>
       </section>
-      <footer class="print-footer"><span>تقرير فحص السيارة — فزاع</span><span>0575003013</span><span>صفحة 2 من 3</span>
-      </footer>
+      <footer class="print-footer"><span>تقرير فحص السيارة — فزاع</span><span>0575003013</span><span>صفحة 2 من 3</span></footer>
     </article>
     <article class="print-page print-page-three">
       <header class="print-header print-header-compact">
-        <div class="print-brand"><img src="./fazza-logo.png" alt="فزاع"><span
-            class="print-brand-line"></span><span>صيانة السيارات المتنقلة</span></div>
-        <div class="print-title-block">
-          <p>اعتماد التقرير</p>
-          <h1>الملخص النهائي</h1><small>رقم التقرير: <b data-print="reportNo">—</b> <span
-              class="print-separator">|</span> تاريخ الفحص: <b data-print="inspectionDate">—</b></small>
-        </div>
+        <div class="print-brand"><img src="./fazza-logo.png" alt="فزاع"><span class="print-brand-line"></span><span>صيانة السيارات المتنقلة</span></div>
+        <div class="print-title-block"><p>اعتماد التقرير</p><h1>الملخص النهائي</h1><small>رقم التقرير: <b data-print="reportNo">—</b> <span class="print-separator">|</span> تاريخ الفحص: <b data-print="inspectionDate">—</b></small></div>
       </header>
       <section class="print-summary-block">
         <div class="print-section-head"><span>الحالة العامة للسيارة</span></div>
@@ -245,24 +170,17 @@
         <p class="print-final-notes" data-print="finalNotes">—</p>
       </section>
       <section class="print-signatures">
-        <div class="print-signature"><strong>توقيع الفني</strong><img id="print-tech-signature" alt="توقيع الفني"><span
-            class="print-sign-line"></span><small data-print="technician">—</small></div>
-        <div class="print-signature"><strong>توقيع العميل</strong><img id="print-customer-signature"
-            alt="توقيع العميل"><span class="print-sign-line"></span><small data-print="customerName">—</small></div>
+        <div class="print-signature"><strong>توقيع الفني</strong><img id="print-tech-signature" alt="توقيع الفني"><span class="print-sign-line"></span><small data-print="technician">—</small></div>
+        <div class="print-signature"><strong>توقيع العميل</strong><img id="print-customer-signature" alt="توقيع العميل"><span class="print-sign-line"></span><small data-print="customerName">—</small></div>
       </section>
       <section class="print-contact">
         <img src="./wa-qr.svg" alt="رمز QR لواتساب فزاع" class="whatsapp-qr">
-        <div><strong>تواصل مع خدمة العملاء</strong>
-          <p>امسح الرمز لفتح محادثة واتساب فزاع</p><b dir="ltr">0575003013</b>
-        </div>
+        <div><strong>تواصل مع خدمة العملاء</strong><p>امسح الرمز لفتح محادثة واتساب فزاع</p><b dir="ltr">0575003013</b></div>
         <span class="contact-whatsapp-mark">واتساب</span>
       </section>
-      <p class="print-disclaimer">هذا التقرير يوضح حالة المركبة وقت الفحص فقط، ولا يعد ضماناً لاستمرار الحالة أو بديلاً
-        عن الفحص التخصصي عند الحاجة.</p>
-      <footer class="print-footer"><span>فزاع لصيانة السيارات — لا تروح للورشة، الورشة
-          تجيك</span><span>fazza.sa</span><span>صفحة 3 من 3</span></footer>
+      <p class="print-disclaimer">هذا التقرير يوضح حالة المركبة وقت الفحص فقط، ولا يعد ضماناً لاستمرار الحالة أو بديلاً عن الفحص التخصصي عند الحاجة.</p>
+      <footer class="print-footer"><span>فزاع لصيانة السيارات — لا تروح للورشة، الورشة تجيك</span><span>fazza.sa</span><span>صفحة 3 من 3</span></footer>
     </article>
   </section>
 </body>
-
 </html>
