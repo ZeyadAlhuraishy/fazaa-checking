@@ -349,11 +349,22 @@ h1, h2, p { margin-top: 0; }
   .print-signature strong { font-size: 11px; }
   .print-signature img { height: 27mm; }
   .print-signature small { font-size: 10px; }
-  .print-contact { gap: 14px; margin-top: 6mm; padding: 9px 13px; background: #f1f8f3; border-color: #b9d9c2; }
-  .whatsapp-qr { width: 37mm; height: 37mm; border: 1px solid #a8cbb2; border-radius: 2mm; }
-  .print-contact strong { font-size: 13px; color: #1f2933; }
-  .print-contact p { font-size: 11px; color: #52615a; }
-  .print-contact b { font-size: 12px; }
-  .contact-whatsapp-mark { padding: 6px 11px; color: #fff; background: #16833f; font-size: 9px; }
+  .print-contact { display: grid; grid-template-columns: minmax(0, 1fr) 27mm; align-items: center; gap: 4mm; min-height: 30mm; margin-top: 6mm; padding: 8px 10px; background: #f1f8f3; border-color: #b9d9c2; }
+  .print-contact-info { display: flex; min-width: 0; flex-direction: column; gap: 2mm; }
+  .print-contact-copy { display: flex; flex-direction: column; gap: 1mm; }
+  .print-contact-copy strong { font-size: 13px; color: #1f2933; }
+  .print-contact-copy p { margin: 0; color: #52615a; font-size: 9px; line-height: 1.35; }
+  .contact-links { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.5mm; min-width: 0; }
+  .contact-link { display: flex; min-width: 0; min-height: 13mm; flex-direction: column; align-items: center; justify-content: center; gap: .7mm; padding: 1mm .5mm; border: 1px solid #d3e1d7; border-radius: 1.7mm; background: #fff; color: #27332c; text-align: center; text-decoration: none; line-height: 1.2; }
+  .contact-link .contact-icon { display: block; width: 5mm; height: 5mm; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .contact-link span { font-size: 8px; font-weight: 850; white-space: nowrap; }
+  .contact-link small { color: #52615a; font-size: 6.8px; font-weight: 750; line-height: 1; }
+  .contact-phone .contact-icon, .contact-website .contact-icon { color: #ef5b17; }
+  .contact-whatsapp .contact-icon, .contact-qr-link { color: #128c52; }
+  .contact-x .contact-icon, .contact-tiktok .contact-icon { color: #17202a; }
+  .contact-instagram .contact-icon { color: #c13584; }
+  .contact-qr-link { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1mm; min-width: 0; color: #128c52; font-size: 7px; font-weight: 850; line-height: 1.2; text-align: center; text-decoration: none; }
+  .whatsapp-qr { width: 23mm; height: 23mm; border: 1px solid #a8cbb2; border-radius: 1.7mm; background: #fff; }
+  .print-contact a { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .print-disclaimer { margin-top: 5mm; color: #4b5563; font-size: 9px; line-height: 1.55; }
 }
