@@ -61,6 +61,8 @@
   const saveState = document.getElementById('save-state');
   let saveTimer = null;
   let isRestoring = false;
+  const defaultDocumentTitle = document.title;
+  let printRestoreHandler = null;
 
   function escapeHtml(value) {
     return String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
@@ -111,9 +113,9 @@
       const lastSequence = Number.parseInt(localStorage.getItem(counterKey) || '0', 10);
       const nextSequence = Number.isFinite(lastSequence) && lastSequence >= 0 ? lastSequence + 1 : 1;
       localStorage.setItem(counterKey, String(nextSequence));
-      return `FZ-${date}-${String(nextSequence).padStart(3, '0')}`;
+      return `FZ-${date.replace(/-/g, '')}${String(nextSequence).padStart(3, '0')}`;
     } catch (error) {
-      return `FZ-${date}-${String(Date.now()).slice(-6)}`;
+      return `FZ-${date.replace(/-/g, '')}${String(Date.now()).slice(-6)}`;
     }
   }
 
@@ -165,6 +167,8 @@
       fields.forEach(id => {
         if (Object.prototype.hasOwnProperty.call(data, id)) document.getElementById(id).value = data[id];
       });
+      const legacyReportNo = reportNoInput.value.trim().match(/^FZ-(\d{4})-(\d{2})-(\d{2})-(\d+)$/);
+      if (legacyReportNo) reportNoInput.value = `FZ-${legacyReportNo[1]}${legacyReportNo[2]}${legacyReportNo[3]}${legacyReportNo[4]}`;
       points.forEach(point => {
         const val = data.statuses?.[point.id];
         if (val) {
@@ -467,15 +471,15 @@
       image.onerror = resolve;
       setTimeout(resolve, 1800);
     })));
-    const originalTitle = document.title;
-    const restoreTitle = () => {
-      document.title = originalTitle;
-      window.removeEventListener('afterprint', restoreTitle);
-    };
     document.title = suggestedPdfTitle(snapshot());
-    window.addEventListener('afterprint', restoreTitle, { once: true });
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    if (printRestoreHandler) window.removeEventListener('afterprint', printRestoreHandler);
+    printRestoreHandler = () => {
+      document.title = defaultDocumentTitle;
+      printRestoreHandler = null;
+    };
+    window.addEventListener('afterprint', printRestoreHandler, { once: true });
     window.print();
-    window.setTimeout(restoreTitle, 1200);
   });
 
   document.getElementById('new-report-btn').addEventListener('click', () => {
@@ -486,6 +490,7 @@
     Object.values(signatures).forEach(id => document.getElementById(id).__clear?.());
     dateInput.value = todaySaudi();
     reportNoInput.value = generateReportNumber(dateInput.value);
+    document.title = defaultDocumentTitle;
     localStorage.removeItem(STORAGE_KEY);
     saveState.textContent = 'بدأ تقرير جديد';
     refresh();
