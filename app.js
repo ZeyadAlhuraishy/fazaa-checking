@@ -22,30 +22,29 @@
     { id: 12, sequence: 9, name: 'فحص حالة المحرك', group: 'engine' },
     { id: 24, sequence: 10, name: 'فحص فلتر الهواء', group: 'engine' },
     { id: 28, sequence: 11, name: 'فحص خفض مياه الرديتر', group: 'engine' },
-    { id: 7, sequence: 12, name: 'فحص المكيف', group: 'cabin' },
-    { id: 25, sequence: 13, name: 'فحص فلتر المكيف', group: 'cabin' },
-    { id: 9, sequence: 14, name: 'فحص الاصطبات والأنوار', group: 'cabin' },
-    { id: 10, sequence: 15, name: 'فحص المساحات', group: 'cabin' },
-    { id: 14, sequence: 16, name: 'فحص كراسي المكينة', group: 'underbody' },
-    { id: 26, sequence: 17, name: 'فحص القير', group: 'underbody' },
-    { id: 27, sequence: 18, name: 'فحص خلايا بطاريات الليثيوم', group: 'underbody' },
-    { id: 13, sequence: 19, name: 'فحص الفحمات', group: 'runningGear' },
-    { id: 17, sequence: 20, name: 'فحص الأقمشة', group: 'runningGear' },
-    { id: 15, sequence: 21, name: 'فحص كراسي المساعدات', group: 'runningGear' },
-    { id: 16, sequence: 22, name: 'فحص المساعدات', group: 'runningGear' },
-    { id: 18, sequence: 23, name: 'فحص مسامير التوازن', group: 'runningGear' },
-    { id: 19, sequence: 24, name: 'فحص ربلات عمود التوازن', group: 'runningGear' },
-    { id: 20, sequence: 25, name: 'فحص المقصات', group: 'runningGear' },
-    { id: 21, sequence: 26, name: 'فحص الرمان', group: 'runningGear' },
-    { id: 22, sequence: 27, name: 'فحص الفرنجات', group: 'runningGear' },
-    { id: 23, sequence: 28, name: 'فحص العكوس', group: 'runningGear' },
-    { id: 29, sequence: 29, name: 'فحص الكفرات', group: 'runningGear' }
+    { id: 7, sequence: 12, name: 'فحص المكيف', group: 'engine' },
+    { id: 14, sequence: 13, name: 'فحص كراسي المكينة', group: 'engine' },
+    { id: 26, sequence: 14, name: 'فحص القير', group: 'engine' },
+    { id: 27, sequence: 15, name: 'فحص خلايا بطاريات الليثيوم', group: 'engine' },
+    { id: 13, sequence: 16, name: 'فحص الفحمات', group: 'runningGear' },
+    { id: 17, sequence: 17, name: 'فحص الأقمشة', group: 'runningGear' },
+    { id: 15, sequence: 18, name: 'فحص كراسي المساعدات', group: 'runningGear' },
+    { id: 16, sequence: 19, name: 'فحص المساعدات', group: 'runningGear' },
+    { id: 18, sequence: 20, name: 'فحص مسامير التوازن', group: 'runningGear' },
+    { id: 19, sequence: 21, name: 'فحص ربلات عمود التوازن', group: 'runningGear' },
+    { id: 20, sequence: 22, name: 'فحص المقصات', group: 'runningGear' },
+    { id: 21, sequence: 23, name: 'فحص الرمان', group: 'runningGear' },
+    { id: 22, sequence: 24, name: 'فحص الفرنجات', group: 'runningGear' },
+    { id: 23, sequence: 25, name: 'فحص العكوس', group: 'runningGear' },
+    { id: 29, sequence: 26, name: 'فحص الكفرات', group: 'runningGear' },
+    { id: 25, sequence: 27, name: 'فحص فلتر المكيف', group: 'cabin' },
+    { id: 9, sequence: 28, name: 'فحص الاصطبات والأنوار', group: 'cabin' },
+    { id: 10, sequence: 29, name: 'فحص المساحات', group: 'cabin' }
   ];
   const inspectionZones = [
-    { key: 'engine', title: 'حجرة المحرك', subtitle: '11 نقطة — ابدأ هنا قبل الانتقال', icon: '01' },
-    { key: 'cabin', title: 'المقصورة والواجهة الأمامية', subtitle: '4 نقاط — افحصهما في جولة واحدة', icon: '02' },
-    { key: 'underbody', title: 'أسفل المحرك وناقل الحركة', subtitle: '3 نقاط — أثناء وجود المركبة على الرافعة', icon: '03' },
-    { key: 'runningGear', title: 'التعليق والفرامل والعجلات', subtitle: '11 نقطة — أكملها حول المركبة على الرافعة', icon: '04' }
+    { key: 'engine', title: 'حجرة المحرك', subtitle: '15 نقطة — ابدأ هنا قبل الانتقال', icon: '01' },
+    { key: 'runningGear', title: 'التعليق والفرامل', subtitle: '11 نقطة — اختبارات فنية وسمعية وتجريبية', disclaimer: 'يُجرى الفحص فنياً، وليس فحصاً فعلياً مباشراً للمكوّنات؛ إذ يعتمد على اختبارات سمعية وتجريبية للسيارة للتعرّف على حالتها، تحقيقاً للشفافية والمصداقية مع العميل.', icon: '02' },
+    { key: 'cabin', title: 'المقصورة', subtitle: '3 نقاط — أُعيد ترقيمها حسب ترتيب الفحص', icon: '03' }
   ];
   const readinessWeights = { excellent: 100, good: 85, followup: 55, replace: 20, damaged: 0 };
   const statusIndicators = {
@@ -67,7 +66,7 @@
     return String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   }
 
-  function renderGroup(title, subtitle, icon, groupName) {
+  function renderGroup(title, subtitle, icon, groupName, disclaimer = '') {
     const groupPoints = points.filter(point => point.group === groupName);
     const articles = groupPoints.map(point => {
       const options = statuses.map(status => `
@@ -79,25 +78,44 @@
         <article class="inspection-item" data-point="${point.id}">
           <div class="point-title"><span class="point-number">${point.sequence.toString().padStart(2, '0')}</span><span class="point-name">${escapeHtml(point.name)}</span></div>
           <div class="status-options" role="radiogroup" aria-label="حالة ${escapeHtml(point.name)}">${options}</div>
-          <input class="point-note" type="text" id="note-${point.id}" name="note-${point.id}" placeholder="ملاحظة لهذه النقطة (اختياري)" aria-label="ملاحظة ${escapeHtml(point.name)}">
         </article>`;
     }).join('');
     return `<section class="inspection-group" aria-label="${title}">
       <div class="inspection-group-head"><span class="group-icon" aria-hidden="true">${icon}</span><strong>${title}</strong><small>${subtitle}</small></div>
+      ${disclaimer ? `<p class="inspection-group-note">${escapeHtml(disclaimer)}</p>` : ''}
       ${articles}
     </section>`;
   }
 
-  groupRoot.innerHTML = inspectionZones.map(zone => renderGroup(zone.title, zone.subtitle, zone.icon, zone.key)).join('');
+  groupRoot.innerHTML = inspectionZones.map(zone => renderGroup(zone.title, zone.subtitle, zone.icon, zone.key, zone.disclaimer)).join('');
 
-  function todayLocal() {
-    const now = new Date();
-    const offset = now.getTimezoneOffset() * 60000;
-    return new Date(now.getTime() - offset).toISOString().slice(0, 10);
+  function todaySaudi() {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Riyadh',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    }).formatToParts(new Date());
+    const dateParts = Object.fromEntries(parts.map(part => [part.type, part.value]));
+    return `${dateParts.year}-${dateParts.month}-${dateParts.day}`;
   }
 
   const dateInput = document.getElementById('inspectionDate');
-  dateInput.value = todayLocal();
+  const reportNoInput = document.getElementById('reportNo');
+  dateInput.value = todaySaudi();
+
+  function generateReportNumber(reportDate = todaySaudi()) {
+    const date = /^\d{4}-\d{2}-\d{2}$/.test(reportDate) ? reportDate : todaySaudi();
+    const counterKey = `fazza_report_sequence_${date}`;
+    try {
+      const lastSequence = Number.parseInt(localStorage.getItem(counterKey) || '0', 10);
+      const nextSequence = Number.isFinite(lastSequence) && lastSequence >= 0 ? lastSequence + 1 : 1;
+      localStorage.setItem(counterKey, String(nextSequence));
+      return `FZ-${date}-${String(nextSequence).padStart(3, '0')}`;
+    } catch (error) {
+      return `FZ-${date}-${String(Date.now()).slice(-6)}`;
+    }
+  }
 
   function getStatus(pointId) {
     const selected = form.querySelector(`input[name="status-${pointId}"]:checked`);
@@ -108,10 +126,8 @@
     const data = {};
     fields.forEach(id => { data[id] = document.getElementById(id)?.value || ''; });
     data.statuses = {};
-    data.notes = {};
     points.forEach(point => {
       data.statuses[point.id] = getStatus(point.id);
-      data.notes[point.id] = document.getElementById(`note-${point.id}`).value || '';
     });
     data.signatures = {};
     Object.entries(signatures).forEach(([key, id]) => {
@@ -155,7 +171,6 @@
           const radio = form.querySelector(`input[name="status-${point.id}"][value="${CSS.escape(val)}"]`);
           if (radio) radio.checked = true;
         }
-        document.getElementById(`note-${point.id}`).value = data.notes?.[point.id] || '';
       });
       Object.entries(signatures).forEach(([key, id]) => {
         if (data.signatures?.[key]) document.getElementById(id).__restore?.(data.signatures[key]);
@@ -244,7 +259,13 @@
 
   Object.values(signatures).forEach(id => signatureSetup(document.getElementById(id)));
   const hadDraft = restoreDraft();
-  if (!hadDraft) dateInput.value = todayLocal();
+  if (!hadDraft) {
+    dateInput.value = todaySaudi();
+    reportNoInput.value = generateReportNumber(dateInput.value);
+  } else {
+    if (!dateInput.value) dateInput.value = todaySaudi();
+    if (!reportNoInput.value.trim()) reportNoInput.value = generateReportNumber(dateInput.value);
+  }
 
   function statusLabel(value) {
     return statuses.find(status => status.value === value)?.label || 'لم تُحدد';
@@ -377,14 +398,16 @@
     document.querySelectorAll('.print-meta-grid [data-print="odometer"]').forEach(node => {
       node.textContent = data.odometer ? `${data.odometer} كم` : '—';
     });
-    const makeRows = groupKeys => {
+    const makeRows = (selectedPoints, showZoneHeadings = false) => {
       let previousGroup = null;
-      return points.filter(point => groupKeys.includes(point.group)).map(point => {
+      return selectedPoints.map(point => {
         const state = data.statuses[point.id];
-        const note = data.notes[point.id];
         const zone = inspectionZones.find(item => item.key === point.group);
-        const zoneHeading = groupKeys.length > 1 && previousGroup !== point.group
-          ? `<tr class="print-zone-separator"><td colspan="5"><strong>${escapeHtml(zone.title)}</strong><small>${escapeHtml(zone.subtitle)}</small></td></tr>`
+        const isEngineContinuation = showZoneHeadings && point.group === 'engine' && point.sequence === 11;
+        const zoneTitle = isEngineContinuation ? `${zone.title} — استكمال` : zone.title;
+        const zoneSubtitle = isEngineContinuation ? 'استكمال النقاط 11–15' : zone.subtitle;
+        const zoneHeading = showZoneHeadings && previousGroup !== point.group
+          ? `<tr class="print-zone-separator${zone.disclaimer ? ' print-zone-disclaimer-row' : ''}"><td colspan="2"><strong>${escapeHtml(zoneTitle)}</strong><small>${escapeHtml(zoneSubtitle)}</small>${zone.disclaimer ? `<p class="print-zone-disclaimer">${escapeHtml(zone.disclaimer)}</p>` : ''}</td></tr>`
           : '';
         const indicator = statusIndicators[state];
         const indicatorMarkup = indicator
@@ -392,15 +415,14 @@
           : `<div class="print-indicator print-indicator-unavailable" role="img" aria-label="لم يحدد الفني الحالة"><span class="print-indicator-value">—</span><span class="print-indicator-bar" aria-hidden="true"></span><span class="print-indicator-unavailable-label">غير محدد</span></div>`;
         previousGroup = point.group;
         return `${zoneHeading}<tr>
-          <td style="text-align:center">${point.sequence}</td>
-          <td>${escapeHtml(point.name)}</td>
+          <td class="print-point-cell"><div class="print-point-content"><span class="print-point-number" dir="ltr">${String(point.sequence).padStart(2, '0')}</span><span class="print-point-name">${escapeHtml(point.name)}</span></div></td>
           <td class="print-indicator-cell">${indicatorMarkup}</td>
-          <td>${note ? escapeHtml(note) : '<span class="print-empty">—</span>'}</td>
         </tr>`;
       }).join('');
     };
-    document.getElementById('print-engine').innerHTML = makeRows(['engine']);
-    document.getElementById('print-vehicle-zones').innerHTML = makeRows(['cabin', 'underbody', 'runningGear']);
+    const orderedPoints = points.slice().sort((a, b) => a.sequence - b.sequence);
+    document.getElementById('print-engine').innerHTML = makeRows(orderedPoints.filter(point => point.sequence <= 10));
+    document.getElementById('print-vehicle-zones').innerHTML = makeRows(orderedPoints.filter(point => point.sequence > 10), true);
     renderReadiness('print', summary);
     const reportLabel = data.reportNo.trim() ? ` رقم ${data.reportNo.trim()}` : '';
     const repairMessage = `السلام عليكم، أرغب بإصلاح الأعطال الظاهرة في تقرير فحص السيارة${reportLabel}.`;
@@ -430,6 +452,13 @@
     saveDraft();
   });
 
+  function suggestedPdfTitle(data) {
+    const cleanPart = value => String(value || '').replace(/\s+/g, ' ').trim();
+    const customer = cleanPart(data.customerName) || 'اسم العميل';
+    const reportNo = cleanPart(data.reportNo) || 'رقم التقرير';
+    return `تقرير فحص سيارة: ${customer} - ${reportNo}`;
+  }
+
   document.getElementById('print-btn').addEventListener('click', async () => {
     updatePrintReport();
     const images = [document.getElementById('print-tech-signature'), document.getElementById('print-customer-signature')].filter(image => image.getAttribute('src'));
@@ -438,19 +467,29 @@
       image.onerror = resolve;
       setTimeout(resolve, 1800);
     })));
+    const originalTitle = document.title;
+    const restoreTitle = () => {
+      document.title = originalTitle;
+      window.removeEventListener('afterprint', restoreTitle);
+    };
+    document.title = suggestedPdfTitle(snapshot());
+    window.addEventListener('afterprint', restoreTitle, { once: true });
     window.print();
+    window.setTimeout(restoreTitle, 1200);
   });
 
   document.getElementById('new-report-btn').addEventListener('click', () => {
-    const hasContent = fields.some(id => document.getElementById(id).value.trim()) || points.some(point => getStatus(point.id) || document.getElementById(`note-${point.id}`).value.trim()) || Object.values(signatures).some(id => document.getElementById(id).dataset.image);
+    const editableFields = fields.filter(id => id !== 'reportNo' && id !== 'inspectionDate');
+    const hasContent = editableFields.some(id => document.getElementById(id).value.trim()) || points.some(point => getStatus(point.id)) || Object.values(signatures).some(id => document.getElementById(id).dataset.image);
     if (hasContent && !window.confirm('هل تريد مسح التقرير الحالي وبدء تقرير جديد؟')) return;
     form.reset();
-    points.forEach(point => { document.getElementById(`note-${point.id}`).value = ''; });
     Object.values(signatures).forEach(id => document.getElementById(id).__clear?.());
-    dateInput.value = todayLocal();
+    dateInput.value = todaySaudi();
+    reportNoInput.value = generateReportNumber(dateInput.value);
     localStorage.removeItem(STORAGE_KEY);
     saveState.textContent = 'بدأ تقرير جديد';
     refresh();
+    saveDraft(false);
   });
 
   document.querySelectorAll('.clear-signature').forEach(button => {
@@ -458,4 +497,5 @@
   });
 
   refresh();
+  saveDraft(false);
 })();

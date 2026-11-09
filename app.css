@@ -108,7 +108,8 @@ h1, h2, p { margin-top: 0; }
 .group-icon { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 10px; background: white; border: 1px solid #f1d6c7; color: var(--orange-deep); font-weight: 900; }
 .inspection-group-head strong { font-size: 13px; }
 .inspection-group-head small { color: var(--muted); font-size: 10px; margin-right: auto; }
-.inspection-item { display: grid; grid-template-columns: 220px minmax(360px, 1fr) minmax(170px, .7fr); align-items: center; gap: 18px; min-height: 87px; padding: 12px 16px; border-bottom: 1px solid #eceeee; }
+.inspection-group-note { margin: 0; padding: 0 17px 12px; background: #fff8f4; color: #73503d; font-size: 10px; line-height: 1.7; }
+.inspection-item { display: grid; grid-template-columns: minmax(190px, 220px) minmax(360px, 1fr); align-items: center; gap: 18px; min-height: 87px; padding: 12px 16px; border-bottom: 1px solid #eceeee; }
 .inspection-item:last-child { border-bottom: 0; }
 .inspection-item:nth-child(even) { background: #fdfdfc; }
 .point-title { display: flex; align-items: center; gap: 10px; min-width: 0; }
@@ -124,9 +125,6 @@ h1, h2, p { margin-top: 0; }
 .status-option[data-value="excellent"] input:checked + span, .status-option[data-value="good"] input:checked + span { color: #08764b; border-color: #8ad2b3; background: #eaf8f1; }
 .status-option[data-value="followup"] input:checked + span { color: #96650a; border-color: #efd07f; background: #fff7df; }
 .status-option[data-value="replace"] input:checked + span, .status-option[data-value="damaged"] input:checked + span { color: #ba3716; border-color: #efb2a2; background: #fff0ec; }
-.point-note { width: 100%; min-height: 38px; border: 1px solid #e2e4e5; border-radius: 8px; padding: 8px 9px; font-size: 10px; background: #fff; outline: 0; }
-.point-note:focus { border-color: var(--orange); box-shadow: 0 0 0 3px #ff5b0418; }
-.point-note::placeholder { color: #b0b4b7; }
 .signature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .signature-card { border: 1px solid #e2e4e5; border-radius: 13px; padding: 13px; background: #fcfcfb; }
 .signature-card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
@@ -145,7 +143,6 @@ h1, h2, p { margin-top: 0; }
 
 @media (max-width: 900px) {
   .inspection-item { grid-template-columns: 190px minmax(0, 1fr); }
-  .point-note { grid-column: 2; }
   .legend { display: none; }
   .status-summary { max-width: 48%; }
 }
@@ -186,12 +183,12 @@ h1, h2, p { margin-top: 0; }
   .summary-circle-inner small { font-size: 8px; }
   .summary-circle-label { font-size: 8.5px; }
   .inspection-group-head { padding: 12px; }
+  .inspection-group-note { padding: 0 12px 11px; font-size: 9px; }
   .inspection-item { display: block; padding: 13px 11px; }
   .point-title { margin-bottom: 14px; }
   .status-options { gap: 8px; }
   .status-option { flex: 1 0 29%; }
   .status-option span { width: 100%; min-height: 44px; font-size: 10px; padding: 0 5px; }
-  .point-note { margin-top: 14px; min-height: 38px; }
   .signature-grid { grid-template-columns: 1fr; }
   .screen-footer { align-items: flex-start; gap: 14px; flex-direction: column; }
 }
@@ -225,9 +222,6 @@ h1, h2, p { margin-top: 0; }
   .print-checks th { background: #292d31; color: #fff; font-size: 7px; padding: 6px 5px; text-align: right; }
   .print-checks td { border: 1px solid #e0e2e3; padding: 5px; font-size: 7.5px; line-height: 1.4; vertical-align: middle; white-space: pre-wrap; overflow-wrap: anywhere; }
   .print-checks tbody tr:nth-child(even) { background: #f8f8f7; }
-  .print-num { width: 8mm; text-align: center !important; }
-  .print-note { width: 46mm; }
-  .print-empty { color: #9a9fa2; }
   .print-footer { position: absolute; bottom: 0; left: 0; right: 0; border-top: 1px solid var(--orange); padding-top: 6px; display: flex; justify-content: space-between; color: #70767a; font-size: 7px; }
   .print-summary-block { border: 1px solid #e2e4e5; border-radius: 8px; padding: 9px; }
   .print-overall { min-height: 16mm; padding: 5px; font-size: 10px; line-height: 1.7; white-space: pre-wrap; }
@@ -344,10 +338,11 @@ h1, h2, p { margin-top: 0; }
   .print-section-head small { color: #535d67; font-size: 10px; }
   .print-checks th { padding: 7px 6px; background: #292f35; color: #fff; font-size: 10.5px; }
   .print-checks td { padding: 6px 7px; font-size: 12px; line-height: 1.38; }
-  .print-num { width: 8mm; }
-  .print-point { width: 62mm; }
-  .print-indicator-col { width: 48mm; }
-  .print-note { width: 69mm; }
+  .print-point { width: 50%; }
+  .print-indicator-col { width: 50%; }
+  .print-point-content { display: flex; align-items: center; gap: 2.2mm; direction: rtl; }
+  .print-point-number { display: grid; width: 7mm; height: 7mm; flex: 0 0 auto; place-items: center; border-radius: 1.4mm; background: #fff0e8; color: #a13800; font-size: 9px; font-weight: 900; font-variant-numeric: tabular-nums; }
+  .print-point-name { min-width: 0; font-weight: 800; }
   .print-indicator-cell { padding: 1px 3px !important; text-align: center; }
   .print-indicator { position: relative; display: block; width: 100%; height: 8.6mm; min-width: 0; overflow: hidden; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
   .print-indicator-value { position: absolute; top: 0; left: clamp(3mm, var(--indicator-position, 50%), calc(100% - 3mm)); transform: translateX(-50%); color: var(--marker-color, #475569); font-size: 9px; font-weight: 950; line-height: 1; white-space: nowrap; font-variant-numeric: tabular-nums; }
@@ -362,11 +357,16 @@ h1, h2, p { margin-top: 0; }
   .print-page-one .print-indicator-value { font-size: 8px; }
   .print-page-one .print-indicator-pointer { top: 2.6mm; border-left-width: 1.2mm; border-right-width: 1.2mm; border-top-width: 1.5mm; }
   .print-page-one .print-indicator-bar { bottom: .3mm; height: 2.8mm; }
-  .print-page-two .print-checks tbody tr { height: 10.6mm; }
-  .print-page-two .print-checks tbody tr.print-zone-separator { height: 6mm !important; }
+  .print-page-two .print-checks tbody tr { height: 8mm; }
+  .print-page-two .print-checks td { padding: 2px 5px; }
+  .print-page-two .print-indicator { height: 6.3mm; }
+  .print-page-two .print-indicator-value { font-size: 8px; }
+  .print-page-two .print-indicator-pointer { top: 2.6mm; border-left-width: 1.2mm; border-right-width: 1.2mm; border-top-width: 1.5mm; }
+  .print-page-two .print-indicator-bar { bottom: .3mm; height: 2.8mm; }
+  .print-page-two .print-checks tbody tr.print-zone-separator { height: auto !important; min-height: 6mm; }
   .print-zone-separator td { padding: 3px 7px !important; background: #fff0e5 !important; color: #73360e !important; font-size: 8px !important; font-weight: 900; text-align: right; border-top: 1px solid #edb58f !important; }
   .print-zone-separator small { float: left; color: #7b675a; font-size: 7px; font-weight: 650; }
-  .print-empty { color: #64748b; }
+  .print-zone-disclaimer { margin: 2px 0 0; color: #65554a; font-size: 7px; font-weight: 500; line-height: 1.45; }
   .print-footer { padding-top: 6px; color: #4b5563; font-size: 9px; border-top-color: #d5d9dd; }
   .print-summary-block { padding: 3mm; border-color: #d9dee3; border-radius: 3mm; }
   .print-overview-dashboard { margin: 0 0 3.5mm; padding: 1.5mm 2.5mm; background: #f8fafb; border-color: #cbd5df; box-shadow: 0 1mm 2mm #26323812; }
