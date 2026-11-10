@@ -457,3 +457,45 @@ h1, h2, p { margin-top: 0; }
 @media (prefers-reduced-motion: reduce) {
   .print-repair-cta { animation: none; box-shadow: 0 0 2mm #ff5b04b3, 0 0 5mm #ff9f1c7a, 0 1mm 3mm #ff5b0466; }
 }
+
+
+
+/* إصلاح توهج مؤشرات النتائج في PDF على iPhone */
+@media print {
+
+  /* إلغاء الظلال الملونة التي قد تظهر كمساحات شفافة */
+  .print-summary-metrics,
+  .print-summary-metrics .summary-metric {
+    box-shadow: none !important;
+  }
+
+  /* الإبقاء على الدوائر الملونة دون توهج خارجي */
+  .print-summary-metrics .summary-circle {
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* إزالة توهج الأرقام والعناوين */
+  .print-summary-metrics .summary-circle-inner strong,
+  .print-summary-metrics .summary-circle-label {
+    text-shadow: none !important;
+  }
+
+  /* إزالة الظلال الإضافية من لوحة الملخص */
+  .print-overview-dashboard,
+  .print-overview-dashboard .print-readiness-gauge {
+    box-shadow: none !important;
+  }
+
+  /* إزالة التوهج من أشرطة المؤشرات */
+  .print-indicator-bar {
+    box-shadow: none !important;
+  }
+
+  /* إيقاف الوميض والتوهج من زر الإصلاح في التقرير */
+  .print-repair-cta {
+    animation: none !important;
+    box-shadow: none !important;
+  }
+}
